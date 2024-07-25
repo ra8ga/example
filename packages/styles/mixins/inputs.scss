@@ -1,0 +1,37 @@
+@mixin inputDefault() {
+  width: var(--inputWidth, 100%);
+  height: var(--inputMinHeight, var(--size6));
+  padding: var(--inputPadding, var(--size0, 7px));
+  border-radius: var(--inputBorderRadius, var(--borderRadius, 7px));
+  border: var(--inputBorderWidth, 2px) solid var(--inputBorderColor, var(--theme0hue0, black));
+  font-family: var(--inputPlaceholderFontFamily, var(--fontFamilyDefault, 'Arial, Helvetica, sans-serif'));
+  font-size: 1rem;
+  background: var(--inputBackground);
+  color: var(--inputColor);
+
+  &::placeholder {
+    font-size: var(--inputPlaceholderFontSize, 0.9rem);
+    color: var(--inputPlaceholderColor, var(--theme0hue2));
+  }
+
+  @media screen and (-webkit-min-device-pixel-ratio:0) { 
+    font-size: 16px;
+  }
+}
+
+@mixin inputFocus() {
+  &:active,
+  &:focus,
+  &:focus-visible,
+  &:hover {
+    border-radius: var(--inputBorderRadius, var(--borderRadius, 7px));
+    border-color: var(--inputFocusBorderColor, var(--theme1hue1));
+    color: var(--inputFocusPlaceholderColor, var(--theme0hue2));
+    outline-color: var(--inputFocusOutlineColor, var(--theme1hue1));
+    outline: none;
+
+    &::placeholder {
+      color: var(--inputFocusPlaceholderColor, var(--theme1hue1));
+    }
+  }
+}

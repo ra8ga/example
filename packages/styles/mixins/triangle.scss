@@ -1,0 +1,48 @@
+//triangle
+@mixin triangle($width, $height, $bgcolor, $direction) {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+  content: '';
+
+  @if ($direction == t) {
+    border-width: 0 $width / 2 + px $height + px $width / 2 + px;
+    border-color: transparent transparent $bgcolor transparent;
+  }
+
+  @if ($direction == r) {
+    border-width: $height / 2 + px 0 $height / 2 + px $width + px;
+    border-color: transparent transparent transparent $bgcolor;
+  }
+
+  @if ($direction == b) {
+    border-width: $height + px $width / 2 + px 0 $width / 2 + px;
+    border-color: $bgcolor transparent transparent transparent;
+  }
+
+  @if ($direction == l) {
+    border-width: $height / 2 + px $width + px $height / 2 + px 0;
+    border-color: transparent $bgcolor transparent transparent;
+  }
+
+  @if ($direction == tl) {
+    border-width: $height + px $width + px 0 0;
+    border-color: $bgcolor transparent transparent transparent;
+  }
+
+  @if ($direction == tr) {
+    border-width: 0 $width + px $height + px 0;
+    border-color: transparent $bgcolor transparent transparent;
+  }
+
+  @if ($direction == br) {
+    border-width: 0 0 $height + px $width + px;
+    border-color: transparent transparent $bgcolor transparent;
+  }
+
+  @if ($direction == bl) {
+    border-width: $height + px 0 0 $width + px;
+    border-color: transparent transparent transparent $bgcolor;
+  }
+}

@@ -1,0 +1,10 @@
+@import '@apprepo/styles/mixins/buttons.scss';
+// STYLES theme
+@import '@apprepo/spottedx-styles/mixins/buttonsColors.scss';
+
+.btn {
+  @include buttonDefault();
+  @include buttonWithIcon('left');
+  @include buttonColorSet3();
+  width: 100%;
+}

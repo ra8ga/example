@@ -1,0 +1,46 @@
+@import '@apprepo/styles/mixins/fontFamilies.scss';
+@include saira-font-family-import();
+
+// html & body selector is to make sure that proper css specificity is applied
+html body {  
+  // THEME LIDL
+  --theme0hue0: #ffffff;
+  --theme0hue1: #d8d8d8;
+  --theme0hue2: #6A6A6A;
+  --theme0hue3: #3a3a3a;
+  --theme0hue4: #272727;
+  --theme0hue5: #111111;
+  --theme0hue6: #000000;
+  --theme1hue0: #ffe300;
+  --theme1hue1: #ffbc2d;
+  --theme1hue2: #ff8e0e;
+  --theme1hue3: #fa4a21;
+  --theme2hue0: #6298e8;
+  --theme2hue1: #3873cc;
+  --theme2hue2: #1c4e9b;
+
+  --borderRadius: 0;
+  --inputBorderColor: var(--theme0hue1);
+  --inputFocusBorderColor: var(--theme2hue1);
+  --inputFocusPlaceholderColor: var(--theme2hue1);
+  --inputPlaceholderColor: var(--theme0hue2);
+
+  background: var(--theme0hue0);
+  color: var(--theme0hue2);
+}
+
+// FONT FAMILY
+body {
+  @include saira-font-family();
+  
+  button,
+  input {
+    @include saira-font-family();
+  }
+}
+
+// TEXT COLORS
+button,
+input {
+  color: var(--theme0hue2);
+}

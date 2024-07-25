@@ -1,0 +1,17 @@
+@mixin flexDirectionGap($direction: null, $gapSize: null) {
+  display: flex;
+  gap: var(--size1);
+  flex-direction: row;
+
+  @if $direction == 'column' {
+    flex-direction: column;
+  }
+
+  @if $direction == 'column-reverse' {
+    flex-direction: column-reverse;
+  }
+
+  @if $gapSize {
+    gap: $gapSize;
+  }
+}

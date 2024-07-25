@@ -1,0 +1,11 @@
+.spinner {
+  margin: auto;
+}
+
+.offCanvasTwo {
+  z-index: 3;
+  
+  &.pointerEventsNone {
+    pointer-events: none;
+  }
+}

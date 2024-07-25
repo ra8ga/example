@@ -1,0 +1,12 @@
+
+// SAIRA
+@mixin saira-font-family-import() {
+  @import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
+}
+@mixin saira-font-family($weight: 400) {
+  font-family: 'Saira', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: $weight;
+  font-style: normal;
+  font-variation-settings: 'wdth' 100;
+}

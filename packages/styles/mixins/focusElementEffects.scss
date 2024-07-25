@@ -1,0 +1,102 @@
+// rough borders start
+@function random-range($min, $max) {
+  $rand: random();
+  $randomNum: $min + floor($rand * (($max - $min) + 1));
+
+  @return $randomNum;
+}
+
+@mixin random-border-radius {
+  $top-left: random-range(30, 100);   // Adjust the range as needed
+  $top-right: random-range(30, 100);  // Adjust the range as needed
+  $bottom-right: random-range(30, 100); // Adjust the range as needed
+  $bottom-left: random-range(20, 100); // Adjust the range as needed
+
+  $ellipse-width: random-range(30, 80); // Adjust the range as needed
+  $ellipse-height: random-range(10, 60); // Adjust the range as needed
+
+  // Ensure values are within valid percentage range
+  $top-left: percentage($top-left / 100);
+  $top-right: percentage($top-right / 100);
+  $bottom-right: percentage($bottom-right / 100);
+  $bottom-left: percentage($bottom-left / 100);
+  $ellipse-width: percentage($ellipse-width / 100);
+  $ellipse-height: percentage($ellipse-height / 100);
+
+  border-radius: ($top-left $top-right $bottom-right $bottom-left) / $ellipse-width $ellipse-height;
+}
+
+// rough borders end
+@mixin effectColorTransparentOverlay(
+  $radius: null,
+  $borderWidth: null,
+  $borderColor: null,
+  $clear: null,
+  $isRoughBorders: null,
+) {
+  position: relative;
+  cursor: pointer;
+
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    border: 4px solid var(--theme1hue0);
+  }
+
+  @if $radius == 'radiusDefault' {
+    &:after {
+      border-radius: var(--borderRadius);
+    }
+  }
+
+  @if $isRoughBorders == 'roughBorders' {
+    &:after {
+      @include random-border-radius();
+    }
+  }
+
+  @if $radius {
+    &:after {
+      border-radius: $radius;
+    }
+  }
+
+  @if $radius == 'radius15px' {
+    &:after {
+      border-radius: 15px;
+    }
+  }
+
+  @if $radius == 'radiusCircle' {
+    &:after {
+      border-radius: var(--borderRadiusCircle);
+    }
+  }
+
+
+  @if $borderWidth {
+    &:after {
+      border-width: $borderWidth;
+    }
+  }
+
+  @if $borderColor {
+    &:after {
+      border-color: $borderColor;
+    }
+  }
+
+  @if $clear == 'clear' {
+    cursor: initial !important;
+
+    &:after {
+      content: unset !important;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+@import './animate.scss';
+
+@mixin buttonDefault() {
+  display: var(--buttonDisplay, inline-flex);
+  align-items: var(--buttonAlignItems, center);
+  justify-content: var(--buttonJustifyContent, center);
+  width: var(--buttonWidth, auto);
+  min-height: var(--buttonMinHeight, var(--size5));
+  padding: var(--buttonPadding, 0 var(--padding1));
+  line-height: var(--buttonLineHeight, 1);
+  outline: var(--buttonOutline, none);
+  white-space: var(--buttonWhiteSpace, nowrap);
+  text-decoration: var(--buttonTextDecoration, none);
+  text-transform: var(--buttonTextTransform, uppercase);
+  background: var(--buttonBackground, none);
+  border: var(--buttonBorder, none);
+  border-width: var(--buttonBorderWidth, 0);
+  border-color: var(--buttonBorderColor, initial);
+  border-style: var(--buttonBorderStyle, none);
+  border-radius: var(--buttonBorderRadius, var(--borderRadius));
+  
+  &:active,
+  &:focus,
+  &:hover {
+    cursor: var(--buttonCursor, pointer);
+    outline: var(--buttonOutline, none);
+  }
+
+  &[disabled=disabled],
+  &:disabled {
+    opacity: var(--buttonDisabledOpacity, 0.75);
+  }
+
+  a {
+    display: var(--buttonDisplay, inline-flex);
+    align-items: var(--buttonAlignItems, center);
+  }
+}
+
+// TYPES
+@mixin buttonWithIcon($position: null) {
+  > i, a > i {
+    line-height: var(--buttonIconLineHeight, 0);
+  }
+
+  @if $position == 'left' {
+    > i, a > i {
+      margin-right: var(--buttonIconMarginRight, var(--size0));
+    }
+  }
+  @if $position == 'right' {
+    > i, a > i {
+      margin-left: var(--buttonIconMarginLeft, var(--size0));
+    }
+  }
+}
+
+@mixin buttonWithSpinnerAndLabel($position: null) {
+  div {
+    margin-right: var(--buttonSpinnerMarginRight, 10px);
+  }
+
+  @if $position == 'right' {
+    div {
+      margin-right: initial;
+      margin-left: var(--buttonSpinnerMarginLeft, 10px);
+    }
+  }
+}
+
+@mixin buttonSizeSm() {
+  min-height: var(--buttonSizeSmMinHeight, var(--size4));
+  padding: var(--buttonSizeSmPadding, 0 var(--padding0));
+  font-size: var(--buttonSizeSmFontSize, 0.8em);
+}
+
+@mixin buttonSizeXs() {
+  min-height: var(--buttonSizeXsMinHeight, var(--size2));
+  padding: var(--buttonSizeXsPadding, 0 var(--padding0));
+  font-size: var(--buttonSizeXsFontSize, 0.8em);
+}
+
+@mixin buttonWithAnimationFadeIn() {
+  @include animated(500ms);
+  @include animation-fade-in-bottom-to-top();
+}

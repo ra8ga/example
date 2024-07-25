@@ -1,0 +1,69 @@
+/* Page.module.css */
+
+.container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.filmContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.film {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.filmImage {
+  width: 100%;
+  height: 120px; /* Reduced height for smaller thumbnails */
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.filmTitle {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.filmRow {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto; /* Allows horizontal scrolling if needed */
+  padding: 10px 0;
+  border-top: 2px solid #ddd;
+  border-bottom: 2px solid #ddd;
+}
+
+.filmRowItem {
+  flex: 0 0 auto; /* Prevents shrinking */
+  width: 120px; /* Width for each thumbnail */
+  margin-right: 10px;
+  text-align: center;
+}
+
+.error {
+  color: red;
+  font-size: 1.2em;
+  margin-top: 20px;
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@apprepo/root",
+  "version": "0.0.1",
+  "private": true,
+  "packageManager": "yarn@3.6.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "the-point-web-dev": "turbo run dev --filter=the-point-web",
+    "the-point-web-build": "turbo run build --filter=the-point-web",
+    "the-point-web-start": "turbo run start --filter=the-point-web",
+    "the-point-web-test": "turbo run test --filter=the-point-web",
+    "the-point-web-lint": "turbo run lint --filter=the-point-web"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "turbo": "^2.0.3",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "i18next-browser-languagedetector": "^8.0.0",
+    "react-circle-flags": "^0.0.20"
+  }
+}

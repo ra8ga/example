@@ -1,0 +1,36 @@
+{
+  "extends": "@apprepo/tsconfig/react-library.json",
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext",
+      "es6"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@ui-web/*": [
+        "./*"
+      ]
+    }
+  },
+  "exclude": ["dist", "build", "node_modules"],
+}
+
+// @todo maybe make one tsconfig for app and ui packages

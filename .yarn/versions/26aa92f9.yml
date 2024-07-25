@@ -1,0 +1,12 @@
+declined:
+  - "@apprepo/root"
+
+undecided:
+  - smsc-da-prov-fe
+  - "@apprepo/eslint-config-custom"
+  - "@apprepo/styles"
+  - "@apprepo/ts-config-custom"
+  - "@apprepo/tsconfig"
+  - "@apprepo/ui-native"
+  - "@apprepo/ui-web"
+  - "@apprepo/utils"

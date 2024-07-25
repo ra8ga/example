@@ -1,0 +1,153 @@
+@import '@apprepo/styles/mixins/flexDirection.scss';
+
+@mixin spinnerSizeLg() {
+  width: var(--size12);
+  min-width: var(--size12);
+  height: var(--size12);
+  min-height: var(--size12);
+
+  > div {
+    border-width: var(--size1);
+  }
+
+  i {
+    display: initial; /// overwrite display none in core styles section
+    // position
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    // size
+    width: 32px;
+    height: 32px;
+    font-size: 32px;
+    line-height: 1;
+    // animate icons
+    transform: scale(0) translate3d(0, 0, 0);
+
+    &:nth-of-type(1) {
+      animation: loadicons 3s infinite ease-in-out;
+    }
+
+    &:nth-of-type(2) {
+      animation: loadicons 3s 1s infinite ease-in-out;
+    }
+
+    &:nth-of-type(3) {
+      animation: loadicons 3s 2s infinite ease-in-out;
+    }
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // bg
+    background: var(--theme0hue4);
+    opacity: 0.5;
+    // border
+    border-radius: var(--borderRadiusCircle);
+  }
+}
+
+
+@mixin spinnerSizeMedium() {
+  width: var(--size6);
+  min-width: var(--size6);
+  height: var(--size6);
+  min-height: var(--size6);
+
+  > div {
+    border-width: var(--size0);
+  }
+}
+
+.spinnerComponent {
+  position: relative;
+  width: var(--size2);
+  height: var(--size2);
+  min-width: var(--size0);
+  min-height: var(--size0);
+
+  // core animation
+  > div {
+    width: 100%;
+    height: 100%;
+    // border
+    border-radius: var(--borderRadiusCircle);
+    border-width: 3px;
+    border-style: solid;
+    // animation
+    animation-play-state: paused;
+    animation: rotate 1s infinite linear;
+  }
+
+  i {
+    display: none; // for default size - icon inside is not visible
+  }
+
+  // core animation
+  @keyframes loadicons {
+    0% {
+      transform: scale(0) translate3d(0, 0, 0);
+    }
+
+    11% {
+      transform: scale(1.2) translate3d(0, 0, 0);
+    }
+
+    22% {
+      transform: scale(1) translate3d(0, 0, 0);
+    }
+
+    33% {
+      transform: scale(0) translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &.sizeMedium {
+    @include spinnerSizeMedium();
+  }
+
+  &.sizeLg {
+    @include spinnerSizeLg();
+  }
+
+  &.theme {
+    --color1: var(--theme1hue0);
+    --color2: var(--theme0hue0);
+
+    > div {
+      border-color: var(--color1);
+      border-left-color: var(--color2);
+    }
+
+    i {
+      color: var(--color1);
+    }
+  }
+}
+
+.spinnerFullWidthHeight {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  max-height: 100vh;
+  @include flexDirectionGap('column');
+
+  > div {
+    margin: auto;
+  }
+}

@@ -1,0 +1,23 @@
+$fontSize: (
+  // small: 14px,
+  // xs: 14px,
+  // xsx: 14px,
+  // xsxx: 14px,
+  sm: 12px,
+  default: 14px,
+  // defaultx: 14px,
+  // md: 14px,
+  // xmd: 14px,
+  // lg: 14px,
+  // lgx: 14px,
+  // lgxx: 14px,
+  // lgxxx: 14px,
+);
+
+@function getFontSize($key) {
+  @return map-get($fontSize, $key);
+}
+
+@mixin fontSize($key) {
+  font-size: getFontSize($key);
+}

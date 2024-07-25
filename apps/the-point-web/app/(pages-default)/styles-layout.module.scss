@@ -1,0 +1,39 @@
+@import '@apprepo/styles/mixins/animate.scss';
+@import '@apprepo/styles/mixins/buttons.scss';
+@import '@apprepo/styles/mixins/flexDirection.scss';
+@import '@apprepo/styles/mixins/focusElementEffects.scss';
+@import '@apprepo/styles/mixins/grid.scss';
+@import '@apprepo/styles/mixins/gridOne.scss';
+@import '@apprepo/styles/mixins/imageCover.scss';
+@import '@apprepo/styles/mixins/mediaQueries.scss';
+
+.layout {
+  position: sticky;
+  top: 0;
+  @include flexDirectionGap('column', 0);
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  background: var(--theme0hue0);
+  overflow: hidden;
+  
+  .header {
+    background: var(--theme0hue0);
+  }
+
+  .flags {
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+
+  &.highlight {
+    &:hover {
+      border-color: var(--theme1hue3);
+      cursor: pointer;
+    }
+  }
+
+  .footer {
+    background: white;
+  }
+}

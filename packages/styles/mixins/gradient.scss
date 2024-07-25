@@ -1,0 +1,4 @@
+@mixin gradient() {
+  background: linear-gradient(150deg, var(--theme7) 0%, var(--theme0hue1) 57%, var(--theme0hue1) 77%, var(--theme7) 100%);
+  background-attachment: fixed;
+}

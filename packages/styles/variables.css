@@ -1,0 +1,42 @@
+html {
+  --size0: 8px;
+  --size1: 16px;
+  --size2: 24px;
+  --size3: 32px;
+  --size4: 40px;
+  --size5: 48px;
+  --size6: 56px;
+  --size7: 64px;
+  --size8: 72px;
+  --size10: 80px;
+  --size12: 88px;
+  --size13: 96px;
+  --size14: 500px;
+  --size15: 700px;
+
+  // other colors
+  --greenColor1: #9BEB2F;
+  --redColor1: #E13434;
+  
+  // font family
+  --fontFamilyDefault: Helvetica, Arial, sans-serif;
+
+  // radius
+  --borderRadius0: var(--size0);
+  --borderRadiusCircle: 50%;
+  
+  // animation speed
+  --animationSpeedSlow: 1000ms;
+  --animationSpeedDefault: 500ms;
+  --animationSpeedFast: 200ms;
+
+  // padding default
+  --padding0: var(--size0);
+  --padding1: var(--size1);
+  --padding2: var(--size2);
+  --padding3: var(--size3);
+  --padding4: var(--size4);
+
+  // border width
+  --borderWidthDefault: 2px;
+}

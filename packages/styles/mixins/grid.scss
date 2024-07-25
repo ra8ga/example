@@ -1,0 +1,31 @@
+$columns: (
+  1: 1fr,
+  2: 1fr 1fr,
+  3: 1fr 1fr 1fr,
+  4: 1fr 1fr 1fr 1fr,
+  5: 1fr 1fr 1fr 1fr 1fr,
+  6: 1fr 1fr 1fr 1fr 1fr 1fr,
+  7: 1fr 1fr 1fr 1fr 1fr 1fr 1fr,
+  8: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr,
+  9: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr,
+  10: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr,
+  11: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr,
+  12: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ,
+);
+
+@function getColumnSize($key) {
+  @return map-get($columns, $key);
+}
+
+@mixin gridDefault($key, $gap: null) {
+  display: grid;
+  grid-template-columns: getColumnSize($key);
+  list-style-type: none; // in case of <ul> element
+
+  // default gap
+  gap: var(--size1);
+  
+  @if $gap {
+    gap: $gap;
+  }
+}

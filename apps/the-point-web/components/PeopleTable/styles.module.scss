@@ -1,0 +1,151 @@
+@import '@apprepo/styles/mixins/flexDirection.scss';
+
+.link {
+  display: inline-block;
+  padding: var(--size0);
+  margin: 10px;
+  background: var(--theme2hue0);
+  cursor: pointer;
+}
+
+.filterableTable {
+  --paddingSize: 10px;
+  --maxInputWidth: 300px;
+  --marginTopSize: 20px;
+  --tableMarginTop: 20px;
+  --transitionTime: 0.3s;
+
+  /* Colors */
+  --inputBackgroundColor: var(--theme0hue0);
+  --inputTextColor: var(--theme0hue4);
+  --tableHeaderColor: var(--theme0hue0);
+  --inputBorderColor: var(--theme0hue1);
+  --inputBorderColorHover: var(--theme1hue1);
+  --tableBorderColor: var(--theme0hue1);
+  --headerBackgroundColor: var(--theme2hue2);
+  --rowHoverBackgroundColor: var(--theme3hue0);
+
+  width: 100%;
+  border-radius: var(--borderRadius);
+  @include flexDirectionGap('column');
+  
+  .header {    
+    @include flexDirectionGap('column');
+
+    h3 {
+      text-align: center;
+      font-size: 2rem;
+      
+      span {
+        display: block;
+        font-size: 0.9rem;
+      }
+    }
+  
+    .input {
+      display: flex;
+      margin: auto;
+      width: 100%;
+      max-width: var(--maxInputWidth);
+      color: var(--inputTextColor);
+      padding: var(--paddingSize);
+      border: 3px solid var(--inputBorderColor);
+      border-radius: var(--borderRadius);
+      background-color: var(--inputBackgroundColor);
+  
+      &:hover, &:focus, &:active {
+        border-color: var(--inputBorderColorHover);
+      }
+    }
+  }
+
+  .table-wrapper {
+    width: 100%;
+    overflow-x: auto;  // Add horizontal scrolling for small screens
+    margin-top: var(--tableMarginTop);
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+
+    @media (max-width: 600px) {
+      display: table;
+    }
+  }
+
+  th, td {
+    border: 1px solid var(--tableBorderColor);
+    transition: all var(--transitionTime) ease;
+    padding: var(--paddingSize);  // Add padding to cells for better readability
+
+    @media (max-width: 600px) {
+      display: block; // Display table cells as block on small screens
+      width: 100%;
+      box-sizing: border-box;
+
+      &::before {
+        content: attr(data-label); // Use data-label attribute for showing the column name
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+        width: 50%;
+        padding-right: 10px;
+      }
+    }
+  }
+
+  td {
+    word-break: break-all;
+  }
+
+  th {
+    background-color: var(--headerBackgroundColor);
+    color: var(--tableHeaderColor);
+
+    @media (max-width: 600px) {
+      display: none; // Hide table headers on small screens
+    }
+  }
+
+  tr {
+    @media (max-width: 600px) {
+      display: block; // Display table rows as block on small screens
+      margin-bottom: 10px;
+    }
+  }
+
+  tr:hover {
+    background-color: var(--rowHoverBackgroundColor);
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  list-style: none;
+  padding: 0;
+
+  li {
+    margin: 0 0.25rem;
+
+    a {
+      padding: 0.5rem 1rem;
+      border: 1px solid #ccc;
+      color: #007bff;
+      cursor: pointer;
+      text-decoration: none;
+
+      &:hover {
+        background-color: #007bff;
+        color: #fff;
+      }
+    }
+  }
+
+  .active a {
+    background-color: #007bff;
+    color: #fff;
+  }
+}

@@ -1,0 +1,9 @@
+@mixin imageCover($url: null) {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  @if $url {
+    background-image: url($url);
+  }
+}

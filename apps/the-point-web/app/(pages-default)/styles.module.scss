@@ -1,0 +1,15 @@
+@import '@apprepo/styles/mixins/animate.scss';
+@import '@apprepo/styles/mixins/buttons.scss';
+@import '@apprepo/styles/mixins/flexDirection.scss';
+@import '@apprepo/styles/mixins/focusElementEffects.scss';
+@import '@apprepo/styles/mixins/grid.scss';
+@import '@apprepo/styles/mixins/gridOne.scss';
+@import '@apprepo/styles/mixins/imageCover.scss';
+@import '@apprepo/styles/mixins/mediaQueries.scss';
+
+.page {
+  display: flex;
+  height: 100%;
+  padding: var(--size2);
+  width: 100%;
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Name and surname",
+  "name-is-required": "Name is required",
+  "email": "Email",
+  "email-is-required": "Email is required",
+  "email-is-invalid": "Email is invalid",
+  "message": "Message",
+  "sending": "Sending...",
+  "send": "Send",
+  "success": "Your message has been sent successfully!",
+  "apiError": "There was an error submitting your form. Please try again."
+}

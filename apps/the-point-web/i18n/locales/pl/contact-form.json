@@ -1,0 +1,12 @@
+{
+  "name": "Imię i nazwisko",
+  "name-is-required": "Imię jest wymagane",
+  "email": "Email",
+  "email-is-required": "Email jest wymagany",
+  "email-is-invalid": "Email jest nieprawidłowy",
+  "message": "Wiadomość",
+  "sending": "Wysyłanie...",
+  "send": "Wyślij",
+  "success": "Twoja wiadomość została wysłana pomyślnie!",
+  "apiError": "Wystąpił błąd podczas przesyłania formularza. Spróbuj ponownie."
+}

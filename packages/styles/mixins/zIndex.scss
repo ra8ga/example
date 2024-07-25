@@ -1,0 +1,12 @@
+$zIndex: (
+  overlay: 1,
+  ImagePicker: 0
+);
+
+@function zIndex($key) {
+  @return map-get($z-index, $key);
+}
+
+@mixin zIndex($key) {
+  z-index: z-index($key);
+}

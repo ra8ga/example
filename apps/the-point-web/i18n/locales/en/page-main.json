@@ -1,0 +1,14 @@
+{
+  "link-reach": "/reach",
+  "link-clp": "/clp",
+  "link-pcn": "/ufi",
+  "link-sds": "/sds",
+  "reachTitle": "REACH",
+  "reachDescription": "Rejestracja, ocena, udzielanie zezwoleń i ograniczeń w zakresie chemikaliów na terenie Unii Europejskiej",
+  "clpTitle": "CLP",
+  "clpDescription": "Klasyfikacja, oznakowanie i pakowanie substancji i mieszanin na terenie Unii Europejskiej",
+  "pcnUfiTitle": "PCN - UFI",
+  "pcnUfiDescription": "Zgłoszenie wprowadzenia do obrotu mieszaniny niebezpiecznej na rynek Unii Europejskiej",
+  "sdsTitle": "Karty charakterystyki",
+  "sdsDescription": "Karta charakterystyki jako narzędzie służące do przekazywania dalszym użytkownikom informacji dotyczących bezpiecznego postępowania z substancjami i mieszaninami"
+}

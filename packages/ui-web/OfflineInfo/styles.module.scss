@@ -1,0 +1,27 @@
+@import '@apprepo/styles/mixins/buttons.scss';
+// STYLES theme
+
+.offlineInfo {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: var(--size5);
+
+  > i {
+    margin: 0 var(--size0);
+    line-height: 0;
+  }
+
+  .btn {
+    // @include buttonDefault();
+    // @include buttonWithoutBackground();
+    // @include buttonWithIcon('left');
+    margin-left: auto;
+  }
+
+  --color1: var(--redColor1);
+  background: var(--color1);
+}
